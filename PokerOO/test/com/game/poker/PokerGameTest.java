@@ -1,6 +1,6 @@
 package com.game.poker;
 
-import com.game.framework.GameResult;
+import com.game.framework.Result;
 import com.game.framework.Rule;
 import com.game.poker.rule.FourOfAKindRule;
 import com.game.scanner.CardScanner;
@@ -17,7 +17,7 @@ public class PokerGameTest {
 
     @Test
     public void testDefaultPokerGame() {
-        GameResult hand = game.play(input);
+        Result hand = game.play(input);
         assertEquals (hand, PokerHandType.FOUR_OF_KIND);
     }
 
@@ -27,7 +27,7 @@ public class PokerGameTest {
         final Rule[] rules  = new Rule[] { new FourOfAKindRule() };
 
         PokerGame game = new PokerGame(scanner, rules);
-        GameResult result = game.play(input);
+        Result result = game.play(input);
 
         assertEquals(PokerHandType.FOUR_OF_KIND, result);
     }

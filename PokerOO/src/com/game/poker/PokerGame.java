@@ -1,7 +1,7 @@
 package com.game.poker;
 
 import com.game.framework.Game;
-import com.game.framework.GameResult;
+import com.game.framework.Result;
 import com.game.framework.Rule;
 import com.game.scanner.CardScanner;
 import com.game.scanner.Deck52Scanner;
@@ -34,10 +34,10 @@ public class PokerGame implements Game {
     }
 
     @Override
-    public GameResult play(String inputs) {
+    public Result play(String inputs) {
         List<Card> cards = scanner.parse(inputs);
         for(Rule rule : rules) {
-            GameResult hand = rule.validate(cards);
+            Result hand = rule.validate(cards);
             if(hand != PokerHandType.NONE) return hand;
         }
         return PokerHandType.NONE;

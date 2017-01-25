@@ -1,5 +1,5 @@
 package com.game.framework;
 
-public interface GameResult {
+public interface Result {
 
 }

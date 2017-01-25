@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface Rule {
 
-    public GameResult validate(List<Card> cards);
+    public Result validate(List<Card> cards);
 }
