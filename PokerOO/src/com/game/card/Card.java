@@ -27,6 +27,11 @@ public class Card {
     }
 
     @Override
+    public int hashCode(){
+        return (suite.ordinal() * 13) + rank.ordinal();
+    }
+
+    @Override
     public String toString() {
         return "Card: " + suite + " " + rank;
     }

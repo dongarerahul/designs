@@ -1,4 +1,4 @@
-package com.game.poker.rule;
+package game.poker.rule;
 
 import com.game.card.Card;
 import com.game.framework.Rule;
@@ -10,7 +10,6 @@ public class HighCardRule implements Rule {
 
     @Override
     public PokerHandType validate(List<Card> cards) {
-        cards.stream().sorted((card1, card2) -> card1.getRank().ordinal() - card2.getRank().ordinal());
         return PokerHandType.HIGH_CARD;
     }
 }
